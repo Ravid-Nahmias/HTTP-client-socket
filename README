@@ -1,0 +1,46 @@
+README
+Name: Ravid Nahmias
+Id: 316032515
+
+Exercise 2 - Client Socket 
+
+===Description ===
+
+Description of the program:
+    An HTTP client that constructs an HTTP request based on user’s command line input, sends the request
+    to a Web server, receives the reply from the server, and displays the reply message on screen. You
+    should support only IPv4 connections.       
+
+Program files:
+1. client.h - contains all the funcations and their implements.
+
+
+funcation:
+	1. freeMemory- free all the allocated memory
+    2. error - print errors of system functions
+    3. commandError- function for errors in the input
+    4. getHostError - prints error that happend in gethostbyname function
+    5. substring- this function return a sub string of s from start to end indexes
+    6. existValidP- this function checks if the argv contain the -p part and if its valid
+    7. validR- this function checks if the argv contain the -r part and if its valid
+    8. check_valid_input- this function check the validity of the command received, and returns the type of the request- GET=0 /POST=1
+    9. size_of_r_path- this function returns the length of the paths that comes in the arguments after -r
+    10. buildPpart- this function recieves the argv and his size and returns a string that content the text after -p
+    11. buildRpart - returns a string that holds all the paths that passed in the input
+    12. extractUrlTotal - returns the rest of the string that comes after http
+    13. extractURLpart - returns the host part in the url, without port or path
+    14. extractURL_PATHpart - return the path part in url if exist
+    15. extractURL_PORTpart - returns a string with the port, otherwise return a string of "80"
+    16. buildRequest - build the HTTP request with all the relevant arguments
+    17. fullPath - build a full path consist of url path and -r path
+
+
+
+If you want to compile the program:
+gcc client.c -o client -Wall -g -Wvla
+
+If you want to run the program:
+./client [-p <text>] [-r n <pr1=value1 pr2=value2 …>] <URL>
+
+
+
